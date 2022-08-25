@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
+import { children, parent } from "../../../animations/animations";
 
 const StyledBanner = styled.div`
 	background: ${(props) => props.theme.colorPrimary};
@@ -22,10 +25,16 @@ const StyledBanner = styled.div`
 `;
 
 const Banner = () => {
+	const [ref, animation] = useScrollAnimation();
 	return (
-		<StyledBanner>
-			<h1>We grow your business.</h1>
-			<img src="/assets/AboutImage3.svg" alt="" />
+		<StyledBanner
+			as={motion.div}
+			ref={ref}
+			variants={parent}
+			initial="hidden"
+			animate={animation}>
+			<motion.h1 variants={children}>We grow your business.</motion.h1>
+			<motion.img src="/assets/AboutImage3.svg" alt="" variants={children} />
 		</StyledBanner>
 	);
 };

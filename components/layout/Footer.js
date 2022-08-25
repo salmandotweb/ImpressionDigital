@@ -1,5 +1,8 @@
 import styled from "styled-components";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 import Button from "../shared/Button";
+import { motion } from "framer-motion";
+import { children, parent } from "../../animations/animations";
 
 const StyledFooter = styled.div`
 	display: flex;
@@ -69,31 +72,37 @@ const StyledCopyright = styled.div`
 `;
 
 const Footer = () => {
+	const [ref, animation] = useScrollAnimation();
 	return (
 		<>
-			<StyledFooter>
-				<div>
+			<StyledFooter
+				as={motion.div}
+				ref={ref}
+				variants={parent}
+				initial="hidden"
+				animate={animation}>
+				<motion.div variants={children}>
 					<h2>digitalImpression.com</h2>
 					<p>
 						Lorem Ipsum is simply dummy text of the printing and typesetting
 						industry.
 					</p>
-				</div>
-				<div>
+				</motion.div>
+				<motion.div variants={children}>
 					<h2>Company</h2>
 					<p>About Us</p>
 					<p>Careers</p>
 					<p>Blog</p>
 					<p>Pricing</p>
-				</div>
-				<div>
+				</motion.div>
+				<motion.div variants={children}>
 					<h2>Resources</h2>
 					<p>Proposal Template</p>
 					<p>Invoice Template</p>
 					<p>Tuturoial</p>
 					<p>How to write a contract</p>
-				</div>
-				<div>
+				</motion.div>
+				<motion.div variants={children}>
 					<h2>Join Our Newsletter</h2>
 					<InputWrapper>
 						<StyledInput type="text" placeholder="Your email address" />
@@ -103,11 +112,18 @@ const Footer = () => {
 						Lorem Ipsum is simply dummy text of the printing and typesetting
 						industry.
 					</p>
-				</div>
+				</motion.div>
 			</StyledFooter>
-			<StyledCopyright>
-				<p>Copyright @ SRSUIUX 2022. All Rights Reserved.</p>
-				<p>Design by @salmandotweb</p>
+			<StyledCopyright
+				as={motion.div}
+				ref={ref}
+				variants={parent}
+				initial="hidden"
+				animate={animation}>
+				<motion.p variants={children}>
+					Copyright @ SRSUIUX 2022. All Rights Reserved.
+				</motion.p>
+				<motion.p variants={children}>Design by @salmandotweb</motion.p>
 			</StyledCopyright>
 		</>
 	);

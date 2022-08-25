@@ -1,5 +1,8 @@
 import styled from "styled-components";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 import Button from "../../shared/Button";
+import { motion } from "framer-motion";
+import { children, parent } from "../../../animations/animations";
 
 const StyledLayout = styled.div`
 	display: flex;
@@ -55,17 +58,29 @@ const StyledImageContainer = styled.div`
 `;
 
 const About = ({ reverse, title, description1, description2, img }) => {
+	const [ref, animation] = useScrollAnimation();
 	return (
 		<StyledLayout reverse={reverse}>
-			<StyledContainer>
-				<h1>{title}</h1>
-				<p>{description1}</p>
-				<p>{description2}</p>
+			<StyledContainer
+				as={motion.div}
+				ref={ref}
+				variants={parent}
+				initial="hidden"
+				animate={animation}>
+				<motion.h1 variants={children}>{title}</motion.h1>
+				<motion.p variants={children}>{description1}</motion.p>
+				<motion.p variants={children}>{description2}</motion.p>
 
 				<Button>Learn More</Button>
 			</StyledContainer>
-			<StyledImageContainer reverse={reverse}>
-				<img src={img} alt="" />
+			<StyledImageContainer
+				reverse={reverse}
+				as={motion.div}
+				ref={ref}
+				variants={parent}
+				initial="hidden"
+				animate={animation}>
+				<motion.img src={img} alt="" variants={children} />
 			</StyledImageContainer>
 		</StyledLayout>
 	);
