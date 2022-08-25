@@ -29,16 +29,41 @@ const StyledServiceCard = styled.div`
 		margin-right: 3rem;
 	}
 
+	&:first-child {
+		@media (max-width: ${"760px"}) {
+			margin-top: 3rem;
+			margin-right: 0;
+		}
+	}
+
 	&:nth-child(2) {
 		margin-top: 15rem;
+
+		@media (max-width: ${"760px"}) {
+			margin-top: 0;
+			margin: 3rem 0;
+		}
 	}
 
 	&:nth-child(3) {
 		margin-top: 10rem;
+
+		@media (max-width: ${"1024px"}) {
+			margin-top: 5rem;
+		}
+		@media (max-width: ${"760px"}) {
+			margin-top: 0;
+		}
 	}
 
-	@media (max-width: ${(props) => props.theme.breakpoints.large}) {
-		width: 32rem;
+	@media (max-width: ${"1048px"}) {
+		width: 100%;
+	}
+	@media (max-width: ${"1024px"}) {
+		width: 30rem;
+	}
+	@media (max-width: ${"760px"}) {
+		width: 100%;
 	}
 `;
 

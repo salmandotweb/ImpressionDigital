@@ -11,6 +11,12 @@ const InputWrapper = styled.div`
 	width: fit-content;
 	border-radius: ${(props) => props.theme.borderRadiusInput};
 	overflow: hidden;
+
+	@media (max-width: ${"411px"}) {
+		flex-direction: column;
+		width: 100%;
+		border-radius: 0.5rem;
+	}
 `;
 
 const StyledInput = styled.input`

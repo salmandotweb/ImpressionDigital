@@ -15,6 +15,10 @@ const StyledLayout = styled.div`
 	@media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
 		padding: 0 ${(props) => props.theme.spacing.small};
 	}
+
+	@media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+		padding: 0 ${(props) => props.theme.spacing.xsmall};
+	}
 `;
 
 function MyApp({ Component, pageProps }) {

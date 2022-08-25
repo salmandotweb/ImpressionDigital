@@ -19,9 +19,10 @@ export const theme = {
 		large: "15rem",
 		medium: "10rem",
 		small: "5rem",
+		xsmall: "2rem",
 	},
 	breakpoints: {
-		mobile: "320px",
+		mobile: "425px",
 		tablet: "768px",
 		desktop: "1024px",
 		large: "1440px",
@@ -29,5 +30,7 @@ export const theme = {
 	flexDirection: {
 		row: "row",
 		rowReverse: "row-reverse",
+		column: "column",
+		columnReverse: "column-reverse",
 	},
 };

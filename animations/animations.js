@@ -16,7 +16,7 @@ export const children = {
 		opacity: 1,
 		scale: 1,
 		transition: {
-			duration: 0.5,
+			duration: 0.8,
 			type: "spring",
 		},
 	},

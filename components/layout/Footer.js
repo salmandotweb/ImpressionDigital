@@ -16,6 +16,11 @@ const StyledFooter = styled.div`
 
 		&:not(:last-child) {
 			margin-right: 2rem;
+
+			@media (max-width: ${"1284px"}) {
+				margin-right: 0rem;
+				margin-bottom: 3rem;
+			}
 		}
 
 		h2 {
@@ -32,6 +37,20 @@ const StyledFooter = styled.div`
 				margin-bottom: 1.5rem;
 			}
 		}
+
+		@media (max-width: ${"1284px"}) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+	}
+
+	@media (max-width: ${"1284px"}) {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 `;
 
@@ -44,6 +63,15 @@ const InputWrapper = styled.div`
 	overflow: hidden;
 	margin-bottom: 2rem;
 	background: #f8f8f8;
+
+	@media (max-width: ${"1284px"}) {
+		flex-direction: row !important;
+		width: 40rem !important;
+	}
+	@media (max-width: ${"1284px"}) {
+		flex-direction: row !important;
+		width: 100% !important;
+	}
 `;
 
 const StyledInput = styled.input`
@@ -58,6 +86,10 @@ const StyledInput = styled.input`
 	&::placeholder {
 		color: ${(props) => props.theme.colorPlaceHolder};
 	}
+
+	@media (max-width: ${"1284px"}) {
+		margin-right: auto;
+	}
 `;
 
 const StyledCopyright = styled.div`
@@ -68,6 +100,11 @@ const StyledCopyright = styled.div`
 
 	p {
 		color: ${(props) => props.theme.colorFooterLinks};
+	}
+
+	@media (max-width: ${"768px"}) {
+		flex-direction: column;
+		text-align: center;
 	}
 `;
 

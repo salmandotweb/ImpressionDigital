@@ -13,6 +13,19 @@ const StyledLayout = styled.div`
 			? props.theme.flexDirection.rowReverse
 			: props.theme.flexDirection.row};
 	padding: 5rem 0;
+
+	@media (max-width: ${"1024px"}) {
+		flex-direction: ${(props) =>
+			props.reverse
+				? props.theme.flexDirection.column
+				: props.theme.flexDirection.column};
+	}
+	@media (max-width: ${"425px"}) {
+		flex-direction: ${(props) =>
+			props.reverse
+				? props.theme.flexDirection.columnReverse
+				: props.theme.flexDirection.columnReverse};
+	}
 `;
 
 const StyledContainer = styled.div`
@@ -25,6 +38,18 @@ const StyledContainer = styled.div`
 		@media (max-width: ${(props) => props.theme.breakpoints.large}) {
 			width: 100%;
 		}
+		@media (max-width: ${(props) => props.theme.breakpoints.large}) {
+			font-size: 4rem;
+		}
+		@media (max-width: ${"1152px"}) {
+			font-size: 4.2rem;
+		}
+		@media (max-width: ${"510px"}) {
+			font-size: 3.8rem;
+		}
+		@media (max-width: ${"425px"}) {
+			font-size: 3rem;
+		}
 	}
 
 	p {
@@ -34,11 +59,28 @@ const StyledContainer = styled.div`
 
 		&:not(:last-child) {
 			margin: 2rem 0;
+
+			@media (max-width: ${"1024px"}) {
+				margin: 1rem 0;
+			}
 		}
 
 		@media (max-width: ${(props) => props.theme.breakpoints.large}) {
 			width: 100%;
 		}
+	}
+
+	@media (max-width: ${"1024px"}) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+	@media (max-width: ${"425px"}) {
+		margin-bottom: 0;
+		margin-top: 4rem;
 	}
 `;
 
@@ -54,6 +96,10 @@ const StyledImageContainer = styled.div`
 		@media (max-width: ${(props) => props.theme.breakpoints.large}) {
 			width: 80%;
 		}
+	}
+
+	@media (max-width: ${"1024px"}) {
+		justify-content: center;
 	}
 `;
 

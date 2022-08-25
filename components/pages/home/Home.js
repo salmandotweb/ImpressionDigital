@@ -9,6 +9,10 @@ const HomeSection = styled.div`
 	align-items: center;
 	justify-content: center;
 	padding: 5rem 0;
+
+	@media (max-width: ${"1072px"}) {
+		flex-direction: column;
+	}
 `;
 
 const LeftSection = styled.div`
@@ -21,6 +25,12 @@ const LeftSection = styled.div`
 		@media (max-width: ${(props) => props.theme.breakpoints.large}) {
 			font-size: 1.8rem;
 		}
+		@media (max-width: ${"510px"}) {
+			font-size: 1.6rem;
+		}
+		@media (max-width: ${"375px"}) {
+			font-size: 1.4rem;
+		}
 	}
 
 	h1 {
@@ -30,6 +40,34 @@ const LeftSection = styled.div`
 		@media (max-width: ${(props) => props.theme.breakpoints.large}) {
 			font-size: 5rem;
 		}
+		@media (max-width: ${"1152px"}) {
+			font-size: 4.2rem;
+		}
+		@media (max-width: ${"1072px"}) {
+			text-align: center;
+		}
+		@media (max-width: ${"510px"}) {
+			font-size: 3.8rem;
+		}
+		@media (max-width: ${"375px"}) {
+			font-size: 3.5rem;
+		}
+	}
+
+	@media (max-width: ${"1198px"}) {
+		margin-right: 2rem;
+	}
+
+	@media (max-width: ${"1152px"}) {
+		flex: 0.6;
+	}
+	@media (max-width: ${"1072px"}) {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 5rem 0;
 	}
 `;
 
@@ -45,6 +83,19 @@ const RightSection = styled.div`
 		@media (max-width: ${(props) => props.theme.breakpoints.large}) {
 			width: 100%;
 		}
+		@media (max-width: ${"1072px"}) {
+			width: 40rem;
+		}
+		@media (max-width: ${"576px"}) {
+			width: 100%;
+		}
+	}
+
+	@media (max-width: ${"1152px"}) {
+		flex: 0.4;
+	}
+	@media (max-width: ${"1072px"}) {
+		flex: 1;
 	}
 `;
 
