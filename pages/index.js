@@ -11,6 +11,7 @@ export default function Home() {
 				<title>digitalImpression.com | Making your business go viral</title>
 				<meta name="description" content="Personal website of Joe Harrison" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="/favicon.png" />
 			</Head>
 			<HomeSection />
 			<Services />
