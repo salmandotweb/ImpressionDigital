@@ -1,5 +1,8 @@
 import styled from "styled-components";
+import { children, parent, scaleOut } from "../../../animations/animations";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 import Input from "../../shared/Input";
+import { motion } from "framer-motion";
 
 const HomeSection = styled.div`
 	display: flex;
@@ -46,15 +49,32 @@ const RightSection = styled.div`
 `;
 
 const Home = () => {
+	const [ref, animation] = useScrollAnimation();
 	return (
 		<HomeSection>
-			<LeftSection>
-				<p>😍 Making your business go viral</p>
-				<h1>We deliver the digital results you desire</h1>
+			<LeftSection
+				as={motion.div}
+				ref={ref}
+				variants={parent}
+				initial="hidden"
+				animate={animation}>
+				<motion.p variants={children}>
+					😍 Making your business go viral
+				</motion.p>
+				<motion.h1 variants={children}>
+					We deliver the digital results you desire
+				</motion.h1>
 				<Input inputPlaceholder="Enter your email" text="Get Started" />
 			</LeftSection>
 			<RightSection>
-				<img src="/assets/homeSectionImage.svg" alt="" />
+				<motion.img
+					src="/assets/homeSectionImage.svg"
+					alt=""
+					ref={ref}
+					variants={scaleOut}
+					initial="hidden"
+					animate={animation}
+				/>
 			</RightSection>
 		</HomeSection>
 	);

@@ -1,5 +1,8 @@
 import styled from "styled-components";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 import Button from "../shared/Button";
+import { motion } from "framer-motion";
+import { children, parent } from "../../animations/animations";
 
 const StyledNavbar = styled.div`
 	display: flex;
@@ -23,7 +26,6 @@ const StyledLinks = styled.div`
 	a {
 		color: ${(props) => props.theme.colorLinks};
 		font-weight: 500;
-		transition: 250ms all;
 
 		&:not(:last-child) {
 			margin-right: 5rem;
@@ -31,21 +33,38 @@ const StyledLinks = styled.div`
 
 		&:hover {
 			color: ${(props) => props.theme.colorPrimary};
-			transform: scale(1.05);
 		}
 	}
 `;
 
 const Navbar = () => {
+	const [ref, animation] = useScrollAnimation();
 	return (
-		<StyledNavbar>
-			<StyledLogo>digitalImpression.</StyledLogo>
-			<StyledLinks>
-				<a href="#">Home</a>
-				<a href="#">About</a>
-				<a href="#">Services</a>
-				<a href="#">Pricing</a>
-				<a href="#">Resources</a>
+		<StyledNavbar
+			as={motion.div}
+			ref={ref}
+			variants={parent}
+			initial="hidden"
+			animate={animation}>
+			<StyledLogo as={motion.h3} variants={children}>
+				digitalImpression.
+			</StyledLogo>
+			<StyledLinks as={motion.div} variants={parent}>
+				<motion.a href="#" variants={children}>
+					Home
+				</motion.a>
+				<motion.a href="#" variants={children}>
+					About
+				</motion.a>
+				<motion.a href="#" variants={children}>
+					Services
+				</motion.a>
+				<motion.a href="#" variants={children}>
+					Pricing
+				</motion.a>
+				<motion.a href="#" variants={children}>
+					Resources
+				</motion.a>
 			</StyledLinks>
 			<Button>Contact Us</Button>
 		</StyledNavbar>

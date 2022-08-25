@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import useScrollAnimation from "../../../hooks/useScrollAnimation";
 import Button from "../../shared/Button";
 import ServiceCard from "../../shared/ServiceCard";
+import { motion } from "framer-motion";
+import { children, parent } from "../../../animations/animations";
 
 const StyledServices = styled.div`
 	display: flex;
@@ -28,8 +31,14 @@ const StyledServicesInfo = styled.div`
 `;
 
 const Services = () => {
+	const [ref, animation] = useScrollAnimation();
 	return (
-		<StyledServices>
+		<StyledServices
+			as={motion.div}
+			ref={ref}
+			variants={parent}
+			initial="hidden"
+			animate={animation}>
 			<ServiceCard
 				background={true}
 				img="/assets/UIUX.svg"
@@ -46,8 +55,10 @@ const Services = () => {
 				title="APP DESIGN"
 				description="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
 			/>
-			<StyledServicesInfo>
-				<h1>Organic and viral growth for your business</h1>
+			<StyledServicesInfo as={motion.div} variants={parent}>
+				<motion.h1 variants={children}>
+					Organic and viral growth for your business
+				</motion.h1>
 				<Button>Explore Now</Button>
 			</StyledServicesInfo>
 		</StyledServices>

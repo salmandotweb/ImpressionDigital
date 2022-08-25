@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Button from "../shared/Button";
+import { motion } from "framer-motion";
+import { children } from "../../animations/animations";
 
 const InputWrapper = styled.div`
 	display: flex;
@@ -26,7 +28,7 @@ const StyledInput = styled.input`
 
 const Input = ({ text, inputPlaceholder }) => {
 	return (
-		<InputWrapper>
+		<InputWrapper as={motion.div} variants={children}>
 			<StyledInput type="text" placeholder={`@ ${inputPlaceholder}`} />
 			<Button customPadding="1.2rem 2rem">{text}</Button>
 		</InputWrapper>

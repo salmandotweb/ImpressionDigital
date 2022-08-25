@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { children } from "../../animations/animations";
 
 const StyledServiceCard = styled.div`
 	width: 26.2rem;
@@ -14,7 +16,7 @@ const StyledServiceCard = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	cursor: pointer;
-	transition: 250ms all;
+	transition: 250ms background, 250ms color, 250ms box-shadow;
 
 	&:hover {
 		transform: scale(1.02);
@@ -48,7 +50,10 @@ const StyledServiceCardDetails = styled.div`
 
 const ServiceCard = ({ background, title, description, img }) => {
 	return (
-		<StyledServiceCard background={background}>
+		<StyledServiceCard
+			background={background}
+			as={motion.div}
+			variants={children}>
 			<img src={img} alt="" />
 			<StyledServiceCardDetails>
 				<h2>{title}</h2>
