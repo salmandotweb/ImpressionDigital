@@ -10,6 +10,7 @@ export const theme = {
 	boxShadow: "0px 4px 17px 0px rgba(0,0,0,.2)",
 	colorBorder: "#ECECEC",
 	colorPlaceHolder: "#BABABA",
+	colorFooterLinks: "#A1A1A1",
 	boxShadowCard: "0px 17px 17px 0px rgba(0,0,0,.25)",
 	borderRadiusButton: "5px",
 	borderRadiusCard: "26px",

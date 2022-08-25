@@ -3,6 +3,7 @@ import { theme } from "../theme/theme";
 import styled from "styled-components";
 import Navbar from "../components/layout/Navbar";
 import "../styles/globals.css";
+import Footer from "../components/layout/Footer";
 
 const StyledLayout = styled.div`
 	padding: 0 ${(props) => props.theme.spacing.large};
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }) {
 			<StyledLayout>
 				<Navbar />
 				<Component {...pageProps} />
+				<Footer />
 			</StyledLayout>
 		</ThemeProvider>
 	);

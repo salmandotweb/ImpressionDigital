@@ -24,11 +24,11 @@ const StyledInput = styled.input`
 	}
 `;
 
-const Input = () => {
+const Input = ({ text, inputPlaceholder }) => {
 	return (
 		<InputWrapper>
-			<StyledInput type="text" placeholder="@ Enter your Email" />
-			<Button customPadding="1.2rem 2rem">Get Started</Button>
+			<StyledInput type="text" placeholder={`@ ${inputPlaceholder}`} />
+			<Button customPadding="1.2rem 2rem">{text}</Button>
 		</InputWrapper>
 	);
 };

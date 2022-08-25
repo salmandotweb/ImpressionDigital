@@ -39,7 +39,7 @@ const StyledLinks = styled.div`
 const Navbar = () => {
 	return (
 		<StyledNavbar>
-			<StyledLogo>digitalImpression</StyledLogo>
+			<StyledLogo>digitalImpression.</StyledLogo>
 			<StyledLinks>
 				<a href="#">Home</a>
 				<a href="#">About</a>

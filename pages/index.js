@@ -1,5 +1,6 @@
 import Head from "next/head";
 import About from "../components/pages/home/About";
+import Banner from "../components/pages/home/Banner";
 import HomeSection from "../components/pages/home/Home";
 import Services from "../components/pages/home/Services";
 
@@ -26,6 +27,7 @@ export default function Home() {
 				img="/assets/AboutImage2.svg"
 				reverse={true}
 			/>
+			<Banner />
 		</>
 	);
 }

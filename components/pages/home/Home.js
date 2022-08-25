@@ -51,7 +51,7 @@ const Home = () => {
 			<LeftSection>
 				<p>😍 Making your business go viral</p>
 				<h1>We deliver the digital results you desire</h1>
-				<Input />
+				<Input inputPlaceholder="Enter your email" text="Get Started" />
 			</LeftSection>
 			<RightSection>
 				<img src="/assets/homeSectionImage.svg" alt="" />
